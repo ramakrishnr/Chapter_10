@@ -1,6 +1,6 @@
 public class PremiumSugarSmashPlayer extends SugarSmashPlayer{
-    int maxGameLevel = 40;
-    private int[] highestScoreList = new int[this.maxGameLevel];
+    private final int MAX_GAME_LEVEL = 40;
+    private int[] highestScoreList = new int[this.MAX_GAME_LEVEL];
     private final int MAX_ARRAY_INDEX = this.highestScoreList.length - 1;
 
     @Override
@@ -30,5 +30,9 @@ public class PremiumSugarSmashPlayer extends SugarSmashPlayer{
         } else {
             return this.highestScoreList[levelIndex];
         }
+    }
+
+    public int getMaxLevel() {
+        return MAX_GAME_LEVEL;
     }
 }

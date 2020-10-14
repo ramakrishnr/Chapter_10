@@ -2,10 +2,11 @@ public class SugarSmashPlayer {
     //fields
     private int idNum;
     private String screenName;
-    int maxGameLevel = 10;
-    private int[] highestScoreList = new int[maxGameLevel];
+    private final int MAX_GAME_LEVEL = 10;
+    private int[] highestScoreList = new int[MAX_GAME_LEVEL];
     private final int MAX_ARRAY_INDEX = highestScoreList.length - 1; 
     final int MAX_LEVEL_SCORE = 100;
+
     //mutator
     public void setIdNum(int idNum) {
         this.idNum = idNum;
@@ -18,16 +19,6 @@ public class SugarSmashPlayer {
         if(levelIndex > MAX_ARRAY_INDEX || levelIndex < 0) {
             System.out.println("Wrong level entered");
         } else {
-            // for(int i = levelIndex; i >= 0; --i) {
-            //     if(levelIndex == 0) {
-            //         highestScoreList[levelIndex] = highestScore;
-            //     }
-            //     else {
-            //         if(highestScoreList[i - 1] > MAX_LEVEL_SCORE) {
-            //             highestScoreList[i] = highestScore;
-            //         }
-            //     }
-            // }
             if(levelIndex == 0) {
                 highestScoreList[levelIndex] = highestScore;
             } else {
@@ -39,28 +30,23 @@ public class SugarSmashPlayer {
             }
         }
     }
-    // public void setHighestScoreList(int[] highestScoreList) {
-    // for(int i = 0; i < highestScoreList.length; ++i) {
-    // this.highestScoreList[i] = highestScoreList[i];
-    // }
-    // }
 
     // accessor
     public int getIdNum() {
         return idNum;
     }
-
     public String getScreenName() {
         return screenName;
     }
-
     public int getHighestScoreList(int levelIndex) {
-        // final int OVER_ARRAY_SIZE = highestScoreList.length - 1;
         if (levelIndex > MAX_ARRAY_INDEX || levelIndex < 0) {
             System.out.println("Wrong level entered");
             return 0;
         } else {
             return highestScoreList[levelIndex];
         }
+    }
+    public int getMaxLevel() {
+        return MAX_GAME_LEVEL;
     }
 }
