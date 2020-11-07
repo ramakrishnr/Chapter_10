@@ -2,7 +2,6 @@ public class ScentedCandle extends Candle{
     //fields
     private String scent;
     private double price;
-    private double height;
     private final int RATE_PER_INCH = 3;
 
     //mutator
@@ -12,18 +11,16 @@ public class ScentedCandle extends Candle{
 
     @Override
     public void setHeight(double height) {
-        this.height = height;
+        super.setHeight(height);
         this.price = height * RATE_PER_INCH;
     }
 
     //accessor
     public String getScent() {
         return scent;
-    } 
-
-    public double getHeight() {
-        return height;
     }
+    
+    @Override
     public double getPrice() {
         return price;
     }
