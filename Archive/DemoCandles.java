@@ -3,22 +3,29 @@ public class DemoCandles {
         Candle aCandle = new Candle();
         ScentedCandle aScentedCandle = new ScentedCandle();
 
-        aCandle.setColor("White");
-        aCandle.setHeight(3);
+        String color;
+        double height;
 
-        aScentedCandle.setColor("OffWhite");
-        aScentedCandle.setHeight(5);
-        aScentedCandle.setScent("Rose");
-        
+        color = "White";
+        height = 5;
+        aCandle.setColor(color);
+        aCandle.setHeight(height);
+
+        color = "Pink";
+        height = 5;
+        aScentedCandle.setColor(color);
+        aScentedCandle.setHeight(height);
+
+        System.out.println();
         System.out.println(aCandle.getColor());
         System.out.println(aCandle.getHeight());
         System.out.println(aCandle.getPrice());
-
         System.out.println();
 
+        System.out.println();
         System.out.println(aScentedCandle.getColor());
         System.out.println(aScentedCandle.getHeight());
-        System.out.println(aScentedCandle.getScent());
         System.out.println(aScentedCandle.getPrice());
+        System.out.println(); 
     }
 }

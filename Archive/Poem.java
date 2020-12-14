@@ -1,20 +1,22 @@
 public class Poem {
     //fields
     private String title;
-    private int numLines;
+    private int lines;
 
-    //constructor
-    public Poem(String title, int numLines) {
+    //contructor
+    public Poem(String title, int lines) {
         this.title = title;
-        this.numLines = numLines;
+        this.lines = lines;
+        System.out.println("This is executed in POEM");
     }
 
-    //accessors
+    //mutator
+
+    //accessor
     public String getTitle() {
         return title;
     }
-    public int getNumLines() {
-        return numLines;
+    public int getLines() {
+        return lines;
     }
-    
 }

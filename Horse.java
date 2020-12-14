@@ -1,55 +1,48 @@
+enum Color {AMBER, BLACK, BLUE, WHITE};
+
 public class Horse {
     //fields
     private String name;
-    private String color;
+    private Color color;
     private int birthYear;
-
-    //contructors
-
-    //mutators
-    // public void setName(String name) {
-    //     this.name = name;
-    // }
+    private static int count = 0;
+    private int horseID;
+    
+    //constructor
+    public Horse() {
+        count++;
+        setHorseID(count);
+    }
+    //mutator
     public void setName(String name) {
         this.name = name;
     }
-    // public void setColor(String color) {
-    //     this.color = color;
-    // }
-    public void setColor(String color) {
+    public void setColor(Color color) {
         this.color = color;
     }
-    // public void setBirthYear(int birthYear) {
-    //     this.birthYear = birthYear;
-    // }
     public void setBirthYear(int birthYear) {
         this.birthYear = birthYear;
     }
+    public void setHorseID(int count) {
+        this.horseID = count;
+    }
 
     //accessor
-    // public String getName() {
-    //     return name;
-    // }
     public String getName() {
         return name;
     }
-    // public String getColor() {
-    //     return color;
-    // }
-    public String getColor() {
+    public Color getColor() {
         return color;
     }
-    // public int getBirthYear() {
-    //     return birthYear;
-    // }
     public int getBirthYear() {
         return birthYear;
     }
+    public int getHorseID() {
+        return horseID;
+    }
 
-    //methods
-    public void displayResult(Horse a) {
-        System.out.println(a.getName());
-        System.out.println(a.getColor());
-        System.out.println(a.getBirthYear());
+    public void display(String name, Color color, int birthYear) {
+        System.out.print(name + " " + color + " " + birthYear + " HorseID: ");
+        System.out.printf("%4d & Count: %d\n", horseID, count);
     }
 }

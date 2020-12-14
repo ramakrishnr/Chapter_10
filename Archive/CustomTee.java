@@ -1,8 +1,8 @@
-public class CustomTee extends TeeShirt {
+public class CustomTee extends TeeShirt{
     //fields
     private String slogan;
-
-    //mutators
+    
+    //mutator
     public void setSlogan(String slogan) {
         this.slogan = slogan;
     }

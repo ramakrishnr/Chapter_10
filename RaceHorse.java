@@ -1,25 +1,14 @@
-public class RaceHorse extends Horse{
+public class RaceHorse extends Horse {
     //fields
-    private int completedRaces;
+    private int completedRace;
 
-    //constructors
-    
-    //mutators
-    public void setCompletedRaces(int completedRaces) {
-        this.completedRaces = completedRaces;
+    //mutator
+    public void setCompletedRace(int completedRace) {
+        this.completedRace = completedRace;
     }
 
-    //accessors
-    public int getCompletedRaces() {
-        return completedRaces;
+    //accessor
+    public int getCompletedRace() {
+        return completedRace;
     }
-
-    //methods
-    public void displayResult(RaceHorse a) {
-        System.out.println(a.getName());
-        System.out.println(a.getColor());
-        System.out.println(a.getBirthYear());
-        System.out.println(a.getCompletedRaces());
-    }
-
 }

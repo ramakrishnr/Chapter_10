@@ -1,27 +1,24 @@
-public class ScentedCandle extends Candle{
+enum Scent {ROSE, HOMEGOMY, SANDAL, EUCYLPS}
+
+public class ScentedCandle extends Candle {
     //fields
-    private String scent;
-    private double price;
-    private final int RATE_PER_INCH = 3;
+    private Scent scent;
+    final double PRICE_PER_INCH = 3.00;
+
 
     //mutator
-    public void setScent(String scent) {
+    public void setScent(Scent scent) {
         this.scent = scent;
     }
-
     @Override
-    public void setHeight(double height) {
+    public void setHeight(int height) {
         super.setHeight(height);
-        this.price = height * RATE_PER_INCH;
+        price = height * this.PRICE_PER_INCH;
     }
 
     //accessor
-    public String getScent() {
+    public Scent getScent() {
         return scent;
     }
-    
-    @Override
-    public double getPrice() {
-        return price;
-    }
+
 }

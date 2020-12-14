@@ -1,42 +1,38 @@
+
 public class TeeShirt {
     //fields
-    private String orderNumber;
-    private String size;
-    private String color;
+    enum Color {BLACK, BLUE, WHITE};
+    enum Size {S, M, L, XL, XXL, XXXL};
+    private int orderNUmber;
+    private Size size;
+    private Color color;
     private double price;
-    private final String XXL = "XXL";
-    private final String XXXL = "XXXL";
-    private final double PRICE_XXL_XXXL = 22.99;
-    private final double PRICE_OTHERS = 19.99;
-
+    //constructor
+    
     //mutator
-    public void setOrderNumber(String orderNumber) {
-        this.orderNumber = orderNumber;
+    public void setOrderNUmber(int orderNUmber) {
+        this.orderNUmber = orderNUmber;
     }
-    public void setSize(String size) {
+    public void setSize(Size size) {
+        boolean bigSize = size.equals(Size.XXL) || size.equals(Size.XXXL);
         this.size = size;
-        if(size.equals(XXL) || size.equals(XXXL)) {
-            this.price = PRICE_XXL_XXXL;
-        }
-        else {
-            this.price = PRICE_OTHERS;
-        }
+        this.price = (bigSize)? 22.99 : 19.99;
     }
-    public void setColor(String color) {
+    public void setColor(Color color) {
         this.color = color;
     }
-
-    //accessors
-    public String getOrderNumber() {
-        return orderNumber;
+    //accessor
+    public int getOrderNUmber() {
+        return orderNUmber;
     }
-    public String getSize() {
+    public Size getSize() {
         return size;
-    }
-    public String getColor() {
+    }public Color getColor() {
         return color;
     }
     public double getPrice() {
         return price;
     }
+    //methods
+
 }

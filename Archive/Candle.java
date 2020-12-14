@@ -1,28 +1,27 @@
 public class Candle {
     //fields
     private String color;
-    private int height;
-    protected double price;
-    private final int PRICE_PER_INCH = 2;
+    private double height;
+    private double price;
+    private final int RATE_PER_INCH = 2;
 
-    //accessor
+    //accessors
     public String getColor() {
         return color;
     }
-    public int getHeight() {
+    public double getHeight() {
         return height;
     }
     public double getPrice() {
         return price;
     }
 
-    //mutator
+    //mutators
     public void setColor(String color) {
         this.color = color;
     }
-    public void setHeight(int height) {
+    public void setHeight(double height) {
         this.height = height;
-        this.price = height * PRICE_PER_INCH;
+        this.price = height * RATE_PER_INCH;
     }
-
 }

@@ -1,52 +1,46 @@
 public class SugarSmashPlayer {
     //fields
-    private int idNum;
+    private final int MAX_LEVEL = 10;
+    private int playerID;
     private String screenName;
-    private final int MAX_GAME_LEVEL = 10;
-    private int[] highestScoreList = new int[MAX_GAME_LEVEL];
-    private final int MAX_ARRAY_INDEX = highestScoreList.length - 1; 
-    final int MAX_LEVEL_SCORE = 100;
+    private int[] highestScore = new int[MAX_LEVEL];
 
     //mutator
-    public void setIdNum(int idNum) {
-        this.idNum = idNum;
+    public void setPlayerID(int playerID) {
+        this.playerID = playerID;
     }
     public void setScreenName(String screenName) {
         this.screenName = screenName;
     }
-    public void setHighestScore(int highestScore, int levelIndex) {
-        //final int OVER_ARRAY_SIZE = highestScoreList.length - 1; 
-        if(levelIndex > MAX_ARRAY_INDEX || levelIndex < 0) {
-            System.out.println("Wrong level entered");
+    public void setLevelHighestScore(int level, int score) {
+        if(level < 1 || level > 10) {
+            this.highestScore[level - 1] = checkScore(level, score);;
         } else {
-            if(levelIndex == 0) {
-                highestScoreList[levelIndex] = highestScore;
-            } else {
-                if(highestScoreList[levelIndex - 1] > MAX_LEVEL_SCORE) {
-                    highestScoreList[levelIndex] = highestScore;
-                } else {
-                    System.out.println("This level is not available for you yet.");
-                }
-            }
+            System.out.println("Invalid error");
         }
     }
 
-    // accessor
-    public int getIdNum() {
-        return idNum;
+   //accessor
+    public int getPlayerID() {
+        return playerID;
     }
     public String getScreenName() {
         return screenName;
     }
-    public int getHighestScoreList(int levelIndex) {
-        if (levelIndex > MAX_ARRAY_INDEX || levelIndex < 0) {
-            System.out.println("Wrong level entered");
-            return 0;
+    public int getLevelHighestScore(int level, int score) {
+        if(level < 1 || level > 10) {
+            return highestScore[level - 1];
         } else {
-            return highestScoreList[levelIndex];
+            System.out.println("Invalid error");
+            return -1;
         }
     }
-    public int getMaxLevel() {
-        return MAX_GAME_LEVEL;
+
+    //method
+    private static int checkScore(int level, int score) {
+        if(level == 0 && score <= 100) {
+            
+        }
+        return score;
     }
 }

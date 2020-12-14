@@ -1,27 +1,37 @@
+enum CandleColor {WHITE, YELLOW, BLACK, PINK, BLUE}
+
 public class Candle {
     //fields
-    private String color;
-    private double height;
-    private double price;
-    private final int RATE_PER_INCH = 2;
+    private CandleColor color;
+    private int height;
+    protected double price;
+    final double PRICE_PER_INCH = 2.00;
 
-    //accessors
-    public String getColor() {
+    //constructor
+
+    //mutator
+    public void setColor(CandleColor color) {
+        this.color = color;
+    }
+    public void setHeight(int height) {
+        this.height = height;
+        price = height * PRICE_PER_INCH;
+        System.out.println(price);
+    }
+
+    //accessor
+    public CandleColor getColor() {
         return color;
     }
-    public double getHeight() {
+    public int getHeight() {
         return height;
     }
     public double getPrice() {
         return price;
     }
 
-    //mutators
-    public void setColor(String color) {
-        this.color = color;
-    }
-    public void setHeight(double height) {
-        this.height = height;
-        this.price = height * RATE_PER_INCH;
+    //method
+    public void display() {
+        System.out.println(getColor() + " " + getHeight() + " " + getPrice());
     }
 }

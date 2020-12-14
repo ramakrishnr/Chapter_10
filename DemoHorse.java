@@ -1,42 +1,23 @@
 public class DemoHorse {
     public static void main(String[] args) {
 
-        //declare variables
+        //declare
         Horse aHorse = new Horse();
         RaceHorse aRaceHorse = new RaceHorse();
 
-        String name;
-        String color;
-        int birthYear;
-        int completedRaces;
+        //initializze
+        aHorse.setName("Jungle King");
+        aHorse.setColor(Color.WHITE);
+        aHorse.setBirthYear(1985);
 
-        //assign values to variables
-        name = "Normal Horse";
-        color = "white";
-        birthYear = 1985;
+        aRaceHorse.setName("Jowel");
+        aRaceHorse.setColor(Color.BLUE);
+        aRaceHorse.setBirthYear(1990);
 
-        //populate aHorse
-        aHorse.setName(name);
-        aHorse.setColor(color);
-        aHorse.setBirthYear(birthYear);
-        
-        //assign diffent values to the variables
-        name = "Running Horse";
-        color = "Red";
-        birthYear = 2020;
-        completedRaces = 6;
-
-        //populate aRacehorse
-        aRaceHorse.setName(name);
-        aRaceHorse.setColor(color);
-        aRaceHorse.setBirthYear(birthYear);
-        aRaceHorse.setCompletedRaces(completedRaces);
-
-        //display results
-        System.out.println();
-        aHorse.displayResult(aHorse);
-        System.out.println();
-        aRaceHorse.displayResult(aRaceHorse);
-        System.out.println();
+        //display
+        aHorse.display(aHorse.getName(), aHorse.getColor(), aHorse.getBirthYear());
+        aRaceHorse.display(aRaceHorse.getName(), aRaceHorse.getColor(), aRaceHorse.getBirthYear());
+        //Horse.display(aHorse.getName(), aHorse.getColor(), aHorse.getBirthYear());
+        //RaceHorse.display(aRaceHorse.getName(), aRaceHorse.getColor(), aRaceHorse.getBirthYear());
     }
 }

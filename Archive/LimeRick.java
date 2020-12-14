@@ -1,6 +1,10 @@
-public class LimeRick extends Poem {
-    //constructor
-    public LimeRick(String title, int numLines) {
-        super(title, numLines);
+public class Limerick extends Poem{
+    //fields
+    private static final int LIMERICK_LINES = 5;
+
+    //contructor
+    public Limerick(String title) {
+        super(title, LIMERICK_LINES);
+        System.out.println(" This is executed in Limerick");
     }
 }
