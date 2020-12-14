@@ -1,4 +1,4 @@
-import java.awt.Color;
+
 
 public class DemoCandle {
     public static void main(String[] args) {
